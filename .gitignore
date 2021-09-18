@@ -1,3 +1,13 @@
+.idea
+.git
+
+/bin/
+/target/
+/.settings
+/.project
+/.classpath
+/rebel.xml
+
 # Compiled class file
 *.class
 

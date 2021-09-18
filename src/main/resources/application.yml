@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: JavaWebLeakTrain
+  # spring内置json的日期转换配置
+  jackson.date-format: yyyy-MM-dd HH:mm:ss
+
+  # 环境 dev:开发环境|test:测试环境|prod:生产环境|home:家里的ip
+  profiles:
+    active: prod
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: test
+    password: 11QQaazz
+    hikari:
+      maxLifetime: 1765000
+      maximumPoolSize: 15
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+server:
+  tomcat:
+    basedir: ./tmp
+  port: 8090
+

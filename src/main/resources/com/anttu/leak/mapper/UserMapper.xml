@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.anttu.leak.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="com.anttu.leak.entity.User">
+        <id column="ID" property="id" jdbcType="INTEGER"/>
+        <result column="ACCOUNT" property="account" jdbcType="VARCHAR"/>
+        <result column="PASSWORD" property="password" jdbcType="VARCHAR"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="SEX" property="sex" jdbcType="INTEGER"/>
+        <result column="COMPANY" property="company" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        ID, ACCOUNT, PASSWORD, NAME, SEX, COMPANY
+    </sql>
+
+    <select id="queryAll" resultMap="BaseResultMap">
+        select
+            <include refid="Base_Column_List"/>
+        from t_user
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+            <include refid="Base_Column_List"/>
+        from t_user
+        where ID = #{id, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectBySex" statementType="PREPARED" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+        where SEX = #{sex, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByAccount" statementType="PREPARED" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from t_user
+        where ACCOUNT = ${account}
+    </select>
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+    insert into t_user (ID, ACCOUNT, PASSWORD, NAME, SEX, COMPANY)
+    values (#{id, jdbcType=INTEGER}, #{ACCOUNT, jdbcType=VARCHAR}, #{PASSWORD, jdbcType=VARCHAR}, #{NAME, jdbcType=VARCHAR}, #{SEX, jdbcType=INTEGER}, #{COMPANY, jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateName">
+    update t_user set name = #{name, jdbcType=VARCHAR} where id = #{id, jdbcType=INTEGER}
+    </update>
+</mapper>
