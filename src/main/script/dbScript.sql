@@ -6,4 +6,4 @@ CREATE TABLE `t_user` (
   `sex` int(1) DEFAULT 0 COMMENT '性别：0:女，1:男',
   `company` varchar(100) DEFAULT NULL COMMENT '公司',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户表';

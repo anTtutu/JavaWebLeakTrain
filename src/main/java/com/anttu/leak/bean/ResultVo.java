@@ -1,5 +1,7 @@
 package com.anttu.leak.bean;
 
+import lombok.Data;
+
 /**
  * 描述
  *
@@ -8,9 +10,6 @@ package com.anttu.leak.bean;
  * @author：Anttu
  * @Date：20/8/2021 09:58
  */
-
-import lombok.Data;
-
 @Data
 public class ResultVo {
     /**

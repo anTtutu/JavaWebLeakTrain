@@ -15,14 +15,14 @@ import com.anttu.leak.service.TestQuery;
 /**
  * 描述
  *
- * @ClassName：TestCpntorller
+ * @ClassName：TestController
  * @Description：
  * @author：Anttu
  * @Date：23/8/2021 13:51
  */
 @RestController
 @RequestMapping("/test")
-public class TestCpntorller {
+public class TestController {
 
     @Resource
     private TestQuery testQuery;

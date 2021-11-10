@@ -9,7 +9,7 @@ import java.util.List;
  *
  * @ClassName：RegionBean
  * @Description：地区bean
- * @Auther：Anttu
+ * @author：Anttu
  * @Date：6/9/2019 21:06
  */
 @Data
@@ -18,6 +18,6 @@ public class RegionBean
     private String id;
     private String name;
     private String no;
-    private String lavel;
+    private String level;
     private List<RegionBean> list;
 }
